@@ -18,7 +18,7 @@ Interact with your applications:
 >>> app = heroku_conn.apps[0];
 ```
 
-# Examples
+## Examples
 List all apps in name order:
 ```js
 apps = heroku_conn.apps("name");
@@ -26,4 +26,48 @@ apps = heroku_conn.apps("name");
 Restart an app's Dyno:
 ```js
 app.dynos()[0].restart();
+```
+
+
+# Account
+Get account:
+```js
+account = heroku_conn.account();
+```
+Change password:
+```js
+await account.change_password('CURRENT_PASSWORD', 'NEW_PASSWORD');
+```
+
+# App
+List all apps:
+```js
+await heroku_conn.apps();
+```
+Get an app:
+```js
+let app = await heroku_conn.get_app('stark-night-1770');
+```
+Delete an app:
+```js
+// warning: this is irreversible
+await app.delete();
+```
+
+# Dyno
+List all dynos:
+```js
+await app.dynos();
+```
+Get a specific dyno from name:
+```js
+let dyno = await app.get_dyno('worker.1');
+```
+Kill a dyno:
+```js
+await dyno.kill();
+```
+Restart a dyno:
+```js
+await dyno.restart();
 ```
