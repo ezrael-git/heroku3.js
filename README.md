@@ -19,26 +19,26 @@ Interact with your applications:
 >>> heroku_conn.apps();
 [ {name: "sharp-night-770", ...}, {name: "handsome-hand-190", ...}, ...]
 
->>> app = heroku_conn.get_app("sharp-night-770");
+>>> let app = heroku_conn.get_app("sharp-night-770");
 //or
->>> app = heroku_conn.apps[0];
+>>> let app = heroku_conn.apps[0];
 ```
 
 ## Examples
 List all apps in name order:
 ```js
-apps = heroku_conn.apps("name");
+let apps = heroku_conn.apps("name");
 ```
 Restart an app's Dyno:
 ```js
-app.dynos()[0].restart();
+await app.dynos()[0].restart();
 ```
 
 
 # Account
 Get account:
 ```js
-account = heroku_conn.account();
+account = heroku_conn.account;
 ```
 Change password:
 ```js
