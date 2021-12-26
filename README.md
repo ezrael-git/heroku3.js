@@ -38,7 +38,7 @@ await app.dynos()[0].restart();
 # Account
 Get account:
 ```js
-account = heroku_conn.account;
+let account = heroku_conn.account;
 ```
 Change password:
 ```js
