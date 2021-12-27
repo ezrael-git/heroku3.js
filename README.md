@@ -69,9 +69,9 @@ Get a specific dyno from name:
 ```js
 let dyno = await app.get_dyno('worker.1');
 ```
-Kill a dyno:
+Stop a dyno:
 ```js
-await dyno.kill();
+await dyno.stop();
 ```
 Restart a dyno:
 ```js
